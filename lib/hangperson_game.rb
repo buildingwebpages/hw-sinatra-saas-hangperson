@@ -35,7 +35,7 @@ class HangpersonGame
   end
   
   def check_win_or_lose
-    return :win if @word.split('').sort.join == @guesses.split('').sort.join
+    return :win if @word.split('').sort.uniq.join == @guesses.split('').sort.uniq.join
     return :lose if @wrong_guesses.length == 7
     return :play
   end
